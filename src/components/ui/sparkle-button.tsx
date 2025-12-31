@@ -135,14 +135,14 @@ export const SparkleButton = ({ className, text = "Criar Conta Grátis", ...prop
     return (
         <button
             className={cn(
-                "group relative rounded-full bg-gradient-to-r from-brand-light/80 via-white to-brand-light/80 p-0.5 text-white transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-brand/30",
+                "group relative rounded-lg bg-gradient-to-r from-brand-light/80 via-white to-brand-light/80 p-0.5 text-white transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-brand/30",
                 className
             )}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             {...props}
         >
-            <div className="relative flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand via-brand to-brand-dark px-8 py-3 text-white font-bold h-12 md:h-14 md:text-lg">
+            <div className="relative flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand via-brand to-brand-dark px-8 py-3 text-white font-bold h-12 md:h-14 md:text-lg">
                 <span>{text}</span>
             </div>
             {!!particleState && (
