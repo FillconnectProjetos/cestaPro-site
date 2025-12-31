@@ -3,6 +3,7 @@ import { Section } from '../ui/section';
 import { Button } from '../ui/button';
 import { Check, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const plans = [
     {
@@ -110,13 +111,15 @@ export const Pricing = () => {
                             ))}
                         </ul>
 
-                        <Button
-                            // @ts-ignore
-                            variant={plan.variant}
-                            className={`w-full text-sm font-semibold ${plan.highlight ? 'bg-brand hover:bg-brand-dark shadow-brand/20 shadow-lg' : ''}`}
-                        >
-                            {plan.cta}
-                        </Button>
+                        <Link to="/login" className="w-full">
+                            <Button
+                                // @ts-ignore
+                                variant={plan.variant}
+                                className={`w-full text-sm font-semibold ${plan.highlight ? 'bg-brand hover:bg-brand-dark shadow-brand/20 shadow-lg' : ''}`}
+                            >
+                                {plan.cta}
+                            </Button>
+                        </Link>
 
                         {plan.highlight && (
                             <p className="text-center text-[10px] text-neutral-400 mt-3">

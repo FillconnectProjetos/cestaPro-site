@@ -2,6 +2,7 @@
 import { Section } from '../ui/section';
 import { SparkleButton } from '../ui/sparkle-button';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
     return (
@@ -55,10 +56,12 @@ export const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
                 >
-                    <SparkleButton
-                        text="Começar Grátis"
-                        className="w-full sm:w-auto shadow-brand/40 shadow-lg hover:shadow-glow transition-all duration-300 bg-gradient-to-r from-brand via-brand-dark to-brand"
-                    />
+                    <Link to="/login">
+                        <SparkleButton
+                            text="Começar Grátis"
+                            className="w-full sm:w-auto shadow-brand/40 shadow-lg hover:shadow-glow transition-all duration-300 bg-gradient-to-r from-brand via-brand-dark to-brand"
+                        />
+                    </Link>
                 </motion.div>
 
 

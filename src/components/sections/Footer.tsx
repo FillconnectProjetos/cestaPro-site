@@ -2,6 +2,7 @@
 import { Section } from '../ui/section';
 import { SocialLinks } from '../ui/social-links';
 import { SparkleButton } from '../ui/sparkle-button';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import iconInstagram from '../../assets/instagram_transparente.png';
 import iconFacebook from '../../assets/facebook_transparente.png';
@@ -43,9 +44,11 @@ export const Footer = () => {
                         Comece grátis hoje. Sem cartão, sem compromisso, sem letras miúdas.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                        <SparkleButton
-                            className="shadow-brand/40 shadow-lg hover:shadow-glow transition-all duration-300 bg-gradient-to-r from-brand via-brand-dark to-brand"
-                        />
+                        <Link to="/login">
+                            <SparkleButton
+                                className="shadow-brand/40 shadow-lg hover:shadow-glow transition-all duration-300 bg-gradient-to-r from-brand via-brand-dark to-brand"
+                            />
+                        </Link>
                     </div>
                 </div>
 

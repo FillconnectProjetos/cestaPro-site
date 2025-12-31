@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '../ui/button';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 export const Navbar = () => {
@@ -38,8 +39,12 @@ export const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center gap-3">
-                        <Button variant="ghost" size="sm" className="text-neutral-600 hover:text-brand">Entrar</Button>
-                        <Button size="sm" className="shadow-brand/20">Começar Grátis</Button>
+                        <Link to="/login">
+                            <Button variant="ghost" size="sm" className="text-neutral-600 hover:text-brand">Entrar</Button>
+                        </Link>
+                        <Link to="/login">
+                            <Button size="sm" className="shadow-brand/20">Começar Grátis</Button>
+                        </Link>
                     </div>
 
                     <button
@@ -77,8 +82,12 @@ export const Navbar = () => {
                                 <a href="#depoimentos" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-graphite font-medium hover:text-brand">Depoimentos</a>
                                 <a href="#precos" onClick={() => setIsMobileMenuOpen(false)} className="text-xl text-graphite font-medium hover:text-brand">Planos</a>
                                 <hr className="border-neutral-100 my-4" />
-                                <Button variant="primary" size="lg" className="w-full">Criar conta grátis</Button>
-                                <Button variant="ghost" size="lg" className="w-full">Entrar</Button>
+                                <Link to="/login" className="w-full">
+                                    <Button variant="primary" size="lg" className="w-full">Criar conta grátis</Button>
+                                </Link>
+                                <Link to="/login" className="w-full">
+                                    <Button variant="ghost" size="lg" className="w-full">Entrar</Button>
+                                </Link>
                             </div>
                         </div>
                     </motion.div>
