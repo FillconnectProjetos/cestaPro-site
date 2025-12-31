@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export const Hero = () => {
     return (
-        <Section className="pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden relative min-h-[80vh] flex items-center justify-center">
+        <Section className="pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-48 md:pb-40 overflow-hidden relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center">
 
             {/* Premium Background Gradient */}
             <div className="absolute inset-0 -z-10 bg-hero-gradient"></div>
@@ -31,7 +31,7 @@ export const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-bold text-graphite tracking-tight mb-6 leading-[1.1]"
+                    className="text-4xl sm:text-5xl md:text-7xl font-bold text-graphite tracking-tight mb-6 leading-[1.1]"
                 >
                     Organize pedidos, controle o <span className="text-brand relative inline-block mx-2">
                         lucro

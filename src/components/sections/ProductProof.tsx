@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 
 export const ProductProof = () => {
     return (
-        <Section className="bg-neutral-900 text-white overflow-hidden py-24 border-t border-white/5">
+        <Section className="bg-neutral-900 text-white overflow-hidden py-16 md:py-24 border-t border-white/5">
             <div className="text-center mb-16 px-4 flex flex-col items-center">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-neutral-100">
                     Interface <span className="text-brand">Limpa e Poderosa</span>

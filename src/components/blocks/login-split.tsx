@@ -47,17 +47,17 @@ export function LoginSplit() {
     };
 
     return (
-        <div className="min-h-screen w-full bg-white text-neutral-900 font-sans md:flex md:items-stretch">
+        <div className="min-h-screen w-full bg-neutral-50 text-neutral-900 font-sans flex flex-col md:flex-row md:items-stretch overflow-hidden">
             <Toaster position="top-right" richColors />
             {/* LEFT COLUMN (Login Form) */}
-            <div className="flex flex-col justify-center items-center p-6 sm:p-12 lg:p-24 bg-white relative w-full md:w-1/2">
-                <div className="w-full max-w-sm space-y-8">
+            <div className="flex flex-col justify-center items-center px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12 xl:px-12 bg-white relative w-full md:w-1/2 order-2 md:order-2">
+                <div className="w-full max-w-sm space-y-6">
                     {/* Header */}
                     <div className="flex flex-col items-center text-center space-y-2">
                         <Link to="/" className="mb-6 hover:opacity-80 transition-opacity">
-                            <img src={logoFull} alt="CestaPro" className="h-8 w-auto" />
+                            <img src={logoFull} alt="CestaPro" className="h-10 sm:h-12 w-auto" />
                         </Link>
-                        <h2 className="text-2xl font-bold tracking-tight text-neutral-900">Bem-vindo de volta!</h2>
+                        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">Bem-vindo de volta!</h2>
                         <p className="text-sm text-neutral-500">Insira seus dados para acessar o painel de controle.</p>
                     </div>
 
@@ -72,8 +72,8 @@ export function LoginSplit() {
                     )}
 
                     {/* Form */}
-                    <form onSubmit={handleLogin} className="space-y-6">
-                        <div className="space-y-4">
+                    <form onSubmit={handleLogin} className="space-y-4">
+                        <div className="space-y-3">
                             <div className="space-y-2">
                                 <Label htmlFor="email">Email</Label>
                                 <Input
@@ -81,7 +81,7 @@ export function LoginSplit() {
                                     placeholder="seu@email.com"
                                     type="email"
                                     required
-                                    className="h-11"
+                                    className="h-10"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -97,7 +97,7 @@ export function LoginSplit() {
                                         placeholder="••••••••"
                                         type={showPassword ? "text" : "password"}
                                         required
-                                        className="h-11 pr-10"
+                                        className="h-10 pr-10"
                                     />
                                     <button
                                         type="button"
@@ -122,7 +122,7 @@ export function LoginSplit() {
 
                         <Button
                             className={cn(
-                                "w-full h-11 text-base font-semibold shadow-lg shadow-brand/20 hover:shadow-brand/30 transition-all",
+                                "w-full h-10 text-sm font-semibold shadow-lg shadow-brand/20 hover:shadow-brand/30 transition-all",
                                 isLoading && "opacity-80 cursor-not-allowed"
                             )}
                             type="submit"
@@ -140,7 +140,7 @@ export function LoginSplit() {
                     </form>
 
                     {/* Footer / Sign Up */}
-                    <div className="text-center text-sm text-neutral-500">
+                    <div className="text-center text-xs text-neutral-500 pt-1">
                         Ainda não tem conta?{' '}
                         <Link to="#" className="font-semibold text-brand hover:underline underline-offset-4">
                             Começar grátis
@@ -150,18 +150,18 @@ export function LoginSplit() {
             </div>
 
             {/* RIGHT COLUMN (Visual/Benefits) */}
-            <div className="relative flex flex-col justify-center p-12 lg:p-16 xl:p-24 bg-neutral-50 overflow-hidden w-full md:w-1/2">
+            <div className="relative flex flex-col justify-center px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12 xl:px-12 bg-neutral-50 overflow-hidden w-full md:w-1/2 order-1 md:order-1">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-hero-gradient opacity-40 pointer-events-none" />
                 <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-brand/5 rounded-full blur-[100px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-lg">
+                <div className="relative z-10 max-w-md mx-auto text-center">
                     {/* Badge */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-neutral-200 shadow-sm mb-8 w-fit"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-neutral-200 shadow-sm mb-5 w-fit mx-auto"
                     >
                         <span className="flex h-2 w-2 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
@@ -175,7 +175,7 @@ export function LoginSplit() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 mb-6 leading-[1.1]"
+                        className="text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 mb-4 leading-[1.1]"
                     >
                         Gerencie pedidos e lucro com <span className="text-brand">segurança</span>.
                     </motion.h1>
@@ -183,7 +183,7 @@ export function LoginSplit() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-lg text-neutral-600 mb-12 leading-relaxed"
+                        className="text-base text-neutral-600 mb-8 leading-relaxed"
                     >
                         Centralize pedidos, produtos e financeiro em um só lugar. Menos improviso, mais controle no dia a dia.
                     </motion.p>
@@ -194,38 +194,47 @@ export function LoginSplit() {
                         variants={containerVariants}
                         initial="hidden"
                         animate="show"
-                        className="space-y-6"
+                        className="space-y-4"
                     >
                         {/* Benefit 1 */}
-                        <motion.div variants={itemVariants} className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-soft hover:shadow-brand/5 transition-all duration-300 border border-transparent hover:border-neutral-100 hover:-translate-y-1">
-                            <div className="h-10 w-10 shrink-0 rounded-xl bg-white border border-neutral-200 flex items-center justify-center text-brand group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                                <ClipboardList className="h-5 w-5" />
-                            </div>
-                            <div>
-                                <h3 className="font-semibold text-neutral-900 group-hover:text-brand transition-colors">Central de Pedidos</h3>
-                                <p className="text-sm text-neutral-500 leading-relaxed mt-1">Organize encomendas, prazos e status sem confusão ou retrabalho.</p>
+                        <motion.div variants={itemVariants} className="group relative p-4 rounded-2xl bg-white border border-neutral-100 shadow-soft hover:shadow-glow-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-light via-brand to-brand-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="flex items-start gap-4 text-left">
+                                <div className="h-9 w-9 shrink-0 rounded-xl bg-brand-light/30 flex items-center justify-center text-brand group-hover:text-white group-hover:bg-brand transition-all duration-300">
+                                    <ClipboardList className="h-4 w-4" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-neutral-900 group-hover:text-brand-dark transition-colors">Central de Pedidos</h3>
+                                    <p className="text-sm text-neutral-500 leading-relaxed mt-1">Organize encomendas, prazos e status sem confusão ou retrabalho.</p>
+                                </div>
                             </div>
                         </motion.div>
 
                         {/* Benefit 2 */}
-                        <motion.div variants={itemVariants} className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-soft hover:shadow-brand/5 transition-all duration-300 border border-transparent hover:border-neutral-100 hover:-translate-y-1">
-                            <div className="h-10 w-10 shrink-0 rounded-xl bg-white border border-neutral-200 flex items-center justify-center text-brand group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                                <TrendingUp className="h-5 w-5" />
-                            </div>
-                            <div>
-                                <h3 className="font-semibold text-neutral-900 group-hover:text-brand transition-colors">Precificação e Lucro</h3>
-                                <p className="text-sm text-neutral-500 leading-relaxed mt-1">Saiba exatamente quanto você ganha em cada cesta, sem achismos.</p>
+                        <motion.div variants={itemVariants} className="group relative p-4 rounded-2xl bg-white border border-neutral-100 shadow-soft hover:shadow-glow-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-light via-brand to-brand-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="flex items-start gap-4 text-left">
+                                <div className="h-9 w-9 shrink-0 rounded-xl bg-brand-light/30 flex items-center justify-center text-brand group-hover:text-white group-hover:bg-brand transition-all duration-300">
+                                    <TrendingUp className="h-4 w-4" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-neutral-900 group-hover:text-brand-dark transition-colors">Precificação e Lucro</h3>
+                                    <p className="text-sm text-neutral-500 leading-relaxed mt-1">Saiba exatamente quanto você ganha em cada cesta, sem achismos.</p>
+                                </div>
                             </div>
                         </motion.div>
 
                         {/* Benefit 3 */}
-                        <motion.div variants={itemVariants} className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-soft hover:shadow-brand/5 transition-all duration-300 border border-transparent hover:border-neutral-100 hover:-translate-y-1">
-                            <div className="h-10 w-10 shrink-0 rounded-xl bg-white border border-neutral-200 flex items-center justify-center text-brand group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                                <Layers className="h-5 w-5" />
-                            </div>
-                            <div>
-                                <h3 className="font-semibold text-neutral-900 group-hover:text-brand transition-colors">Produtos e Fichas Técnicas</h3>
-                                <p className="text-sm text-neutral-500 leading-relaxed mt-1">Padronize itens, custos e montagem para ganhar tempo e consistência.</p>
+                        <motion.div variants={itemVariants} className="group relative p-4 rounded-2xl bg-white border border-neutral-100 shadow-soft hover:shadow-glow-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-light via-brand to-brand-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="flex items-start gap-4 text-left">
+                                <div className="h-9 w-9 shrink-0 rounded-xl bg-brand-light/30 flex items-center justify-center text-brand group-hover:text-white group-hover:bg-brand transition-all duration-300">
+                                    <Layers className="h-4 w-4" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-neutral-900 group-hover:text-brand-dark transition-colors">Produtos e Fichas Técnicas</h3>
+                                    <p className="text-sm text-neutral-500 leading-relaxed mt-1">Padronize itens, custos e montagem para ganhar tempo e consistência.</p>
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>

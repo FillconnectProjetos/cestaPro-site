@@ -29,10 +29,10 @@ const socialLinks = [
 
 export const Footer = () => {
     return (
-        <footer className="bg-neutral-50 text-neutral-600 pt-20 pb-10">
+        <footer className="bg-neutral-50 text-neutral-600 pt-16 sm:pt-20 pb-10">
             <Section className="!py-0">
                 {/* Final CTA */}
-                <div className="text-center mb-20 bg-gradient-to-br from-neutral-800 to-neutral-900 p-10 rounded-3xl border border-white/5 mx-4 md:mx-0 shadow-2xl relative overflow-hidden">
+                <div className="text-center mb-16 sm:mb-20 bg-gradient-to-br from-neutral-800 to-neutral-900 p-6 sm:p-10 rounded-3xl border border-white/5 mx-4 md:mx-0 shadow-2xl relative overflow-hidden">
                     {/* Decorative glows */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-brand opacity-10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600 opacity-10 blur-3xl rounded-full -translate-x-1/2 translate-y-1/2"></div>
