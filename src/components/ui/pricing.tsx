@@ -9,7 +9,7 @@ import { Button } from "./button";
 import NumberFlow from "@number-flow/react";
 import { useMediaQuery } from "../../hooks/use-media-query";
 
-type PlanDuration = "mensal" | "mensal_cupom" | "trimestral" | "semestral" | "anual";
+type PlanDuration = "mensal" | "trimestral" | "semestral" | "anual";
 
 interface PricingState {
     total: number;
@@ -26,13 +26,6 @@ const PRICING_DATA: Record<PlanDuration, PricingState> = {
         label: "Mensal",
         description: "Assine mensalmente e cancele quando quiser.",
         buttonText: "Escolher Mensal"
-    },
-    mensal_cupom: {
-        total: 80.91,
-        monthly: 80.91,
-        label: "Mensal + Cupom",
-        description: "Ganhe 10% de desconto no seu primeiro mês.",
-        buttonText: "Quero 10% OFF"
     },
     trimestral: {
         total: 242.70,
@@ -59,7 +52,6 @@ const PRICING_DATA: Record<PlanDuration, PricingState> = {
 
 const DURATION_OPTIONS: PlanDuration[] = [
     "mensal",
-    "mensal_cupom",
     "trimestral",
     "semestral",
     "anual"
@@ -87,8 +79,8 @@ export function Pricing() {
 
     // Construct the 3 logical cards based on selection
     // Card 0: The specific plan selected by the user (Left)
-    // Card 1: The Recommended Anual plan (Center, highlighted)
-    // Card 2: The Semestral plan (Right, as alternative)
+    // Card 1: The Recommended Semestral plan (Center, highlighted)
+    // Card 2: The Anual plan (Right, as alternative)
 
     // If Anual is selected, we show Anual on left? No, duplicate logic.
     // Let's adopt a "Plan View" logic.
@@ -100,8 +92,8 @@ export function Pricing() {
 
     // To be safe and simple: 
     // Left Card always updates with selection.
-    // Middle Card is always Anual (Recommended).
-    // Right Card is always Semestral.
+    // Middle Card is always Semestral (Recommended).
+    // Right Card is always Anual.
     // Visuals will handle the "Popular" look for the middle one.
 
     const cards = [
@@ -113,15 +105,15 @@ export function Pricing() {
         },
         {
             id: 'recommended',
-            data: PRICING_DATA.anual,
+            data: PRICING_DATA.semestral,
             type: 'popular',
-            active: selectedDuration === 'anual'
+            active: selectedDuration === 'semestral'
         },
         {
             id: 'intermediate',
-            data: PRICING_DATA.semestral,
+            data: PRICING_DATA.anual,
             type: 'standard',
-            active: selectedDuration === 'semestral'
+            active: selectedDuration === 'anual'
         }
     ];
 
